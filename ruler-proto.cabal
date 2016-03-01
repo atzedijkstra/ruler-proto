@@ -1,0 +1,31 @@
+Name:                ruler-proto
+Version:             0.1.0.0
+Copyright:           Utrecht University, Department of Information and Computing Sciences, Software Technology group, Atze Dijkstra
+Description:         Shuffle tool used by UHC (Utrecht Haskell Compiler)
+Synopsis:            Shuffle tool for UHC
+Homepage:            https://github.com/atzedijkstra/ruler-proto
+Bug-Reports:         https://github.com/atzedijkstra/ruler-proto/issues
+License:             BSD3
+License-file:        LICENSE
+Author:              Atze Dijkstra
+Maintainer:          atzedijkstra@gmail.com
+Category:            Development
+Build-Type:          Custom
+Cabal-Version:       >= 1.8
+Extra-Source-Files:  uuagc_options,
+                     src/Ruler.ag
+
+Source-Repository head
+  Type:              git
+  Location:          https://github.com/atzedijkstra/ruler-proto.git
+
+Executable ruler-proto
+  Hs-Source-Dirs:    src
+  Main-Is:           Ruler.hs
+  Extensions:        RankNTypes, TypeSynonymInstances, FlexibleInstances, FlexibleContexts
+  Build-Depends:     base >= 4 && < 5,
+                     containers >= 0.4,
+                     uulib >= 0.9,
+                     uhc-util >= 0.1.5,
+                     uuagc >= 0.9.40.3,
+                     uuagc-cabal >= 1.0.3.0
